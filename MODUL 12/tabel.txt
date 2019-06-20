@@ -1,0 +1,20 @@
+CREATE TABLE Tamu (
+id_tamu VARCHAR(20) primary key,
+nama_tamu VARCHAR(45),
+alamat_tamu VARCHAR(255)
+);
+
+create table Kamar(
+no_kamar varchar(20) primary key,
+Tamu_id_tamuFK integer references Tamu(id_tamu),
+jenis_kasur varchar(20),
+harga_permalam integer
+);
+
+CREATE TABLE Transaksi (
+no_transaksi INTEGER primary key,
+Tamu_id_tamuFK INTEGER references Tamu(id_tamu),
+booking date,
+check_in DATE,
+check_out DATE
+);
